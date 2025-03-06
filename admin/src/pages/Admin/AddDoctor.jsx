@@ -42,6 +42,8 @@ const AddDoctor = () => {
       formData.append('degree', degree)
       formData.append('address', JSON.stringify({ line1: address1, line2: address2 }))
 
+
+      // console log formData
       formData.forEach((value, key) => {
         console.log(`${key} : ${value}`)
       })
