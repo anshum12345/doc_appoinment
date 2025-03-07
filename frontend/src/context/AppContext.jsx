@@ -67,7 +67,7 @@ const AppContextProvider = ({ children }) => {
 
 
   const value = {
-    doctors,
+    doctors, getDoctorsData,
     currencySymbol,
     token,
     setToken,
