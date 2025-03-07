@@ -8,6 +8,7 @@ const AdminContextProvider = (props) => {
   const [aToken, setAToken] = useState(localStorage.getItem("aToken") || "");
   const [doctors, setDoctors] = useState([]);
   const [appointments, setAppointments] = useState([]);
+   const [dashData, setDashData] = useState(false)
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
   console.log(backendUrl); // This should log 'http://localhost:4000'
@@ -67,6 +68,40 @@ const AdminContextProvider = (props) => {
     }
   };
 
+
+  // cancle appointemnt
+  const cancelAppointment = async (appointmentId) => {
+    try {
+      const  {data} = await axios.post(backendUrl + '/api/admin/cancel-appointment', {appointmentId}, {headers: {aToken}})
+
+      if(data.success){
+        toast.success(data.message)
+        getAllAppointments()
+      }
+      else{
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
+
+
+  // dashboard data form api
+  const getDashData = async () => {
+    try {
+      const {data} = await axios.get(backendUrl + '/api/admin/dashboard', {headers:{aToken}})
+
+      if(data.success){
+        setDashData(data.dashData)
+      }else{
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
+
   const value = {
     aToken,
     setAToken,
@@ -77,6 +112,10 @@ const AdminContextProvider = (props) => {
     getAllAppointments,
     appointments,
     setAppointments,
+    cancelAppointment,
+    getDashData,
+    dashData,
+    setDashData
   };
 
   return (
