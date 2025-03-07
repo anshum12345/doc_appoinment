@@ -9,7 +9,9 @@ const AdminContextProvider = (props) => {
 
  const [doctors, setDoctors] = useState([]);
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+ const backendUrl = import.meta.env.VITE_BACKEND_URL;
+ console.log(backendUrl);  // This should log 'http://localhost:4000'
+
 
   const getAllDoctors = async () => {
     try{
@@ -30,20 +32,26 @@ const AdminContextProvider = (props) => {
 
   // for change availability
 
-const changeAvailablity = async (docId) => {
-  try {
-    const { data } = await axios.post(backendUrl + '/api/doctor/change-availablity', { docId }, { headers: { aToken } })
-    if (data.success) {
-      toast.success(data.message)
-      getAllDoctors()
+  // for change availability
+
+  const changeAvailablity = async (docId) => {
+    try {
+      const { data } = await axios.post(
+        backendUrl + '/api/admin/change-availability',  // 🔴 FIXED ENDPOINT
+        { docId },
+        { headers: { aToken } }
+      );
+      if (data.success) {
+        toast.success(data.message);
+        getAllDoctors();
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
     }
-     else {
-      toast.error(data.message)
-     }
-  } catch (error) {
-    toast.error(error.message);
-  }
-}
+  };
+  
 
   const value = {
     aToken, // Corrected the typo here

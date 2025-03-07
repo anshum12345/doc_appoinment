@@ -1,15 +1,16 @@
-import  express from 'express'
-import {addDoctor,allDoctors,loginAdmin} from '../controllers/adminController.js'
-import upload from '../middlewares/multer.js'
-import authAdmin from '../middlewares/authAdmin.js'
-import { changeAvailablity } from '../controllers/doctorController.js'
+import express from 'express';
+import { addDoctor, allDoctors, loginAdmin } from '../controllers/adminController.js';
+import upload from '../middlewares/multer.js';
+import authAdmin from '../middlewares/authAdmin.js';
+import { changeAvailablity } from '../controllers/doctorController.js';
 
-const adminRouter = express.Router()
+const adminRouter = express.Router();
 
-adminRouter.post('/add-doctor',authAdmin, upload.single('image'),addDoctor)
-adminRouter.post('/login', loginAdmin)
-adminRouter.post('/all-doctors',authAdmin,allDoctors)
+adminRouter.post('/add-doctor', authAdmin, upload.single('image'), addDoctor);
+adminRouter.post('/login', loginAdmin);
+adminRouter.post('/all-doctors', authAdmin, allDoctors);
 
-adminRouter.post('/change-availablity', authAdmin ,changeAvailablity)
+// 🔴 FIXED THE SPELLING HERE
+adminRouter.post('/change-availability', authAdmin, changeAvailablity);
 
-export default adminRouter
+export default adminRouter;
