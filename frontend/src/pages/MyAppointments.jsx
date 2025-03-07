@@ -4,7 +4,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const MyAppointments = () => {
-  const { backendUrl, token , getDoctorData} = useContext(AppContext);
+  const { backendUrl, token, getDoctorData } = useContext(AppContext);
+
 const [appointments, setAppointments] = useState([]);
 
 const months = [" " ,"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -32,22 +33,27 @@ const getUserAppointments = async () => {
 
 // cancle appointments
 const cancelAppointment = async (appointmentId) => {
-  try{
-    const {data} = await axios.post(backendUrl + '/api/user/cancel-appointment',{appointmentId},{headers:{token}})
-    if(data.success){
-      toast.success(data.message)
+  try {
+    const { data } = await axios.post(`${backendUrl}/api/user/cancel-appointment`, { appointmentId }, { headers: { token } });
+    
+    if (data.success) {
+      toast.success(data.message);
       getUserAppointments();
-      getDoctorData();
-    }
-    else{
+      
+      if (typeof getDoctorData === 'function') {
+        getDoctorData();
+      } else {
+        console.warn("getDoctorData is not a function");
+      }
+    } else {
       toast.error(data.message);
     }
-  }
-  catch(error){
+  } catch (error) {
     console.log(error);
     toast.error(error.message);
   }
-}
+};
+
 
 useEffect(() => {
   if(token){
