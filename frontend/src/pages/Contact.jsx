@@ -1,29 +1,74 @@
-import React from 'react'
-import { assets } from '../assets/assets'
+import React from 'react';
+import { assets } from '../assets/assets';
 
 const Contact = () => {
   return (
-    <div>
-      <div className='text-center text-2xl pt-10 text-gray-500'>
-        <p>CONTACT <span className='text-gray-700 font-semibold'>US</span></p>
+    <div className="bg-gray-50 min-h-screen py-12" style={{ perspective: '1500px' }}>
+      {/* Title Section */}
+      <div
+        className="text-center text-4xl pt-10 text-gray-600 font-bold mb-12"
+        style={{
+          transform: 'translateZ(50px)',
+          transition: 'transform 0.5s ease',
+        }}
+      >
+        <p>CONTACT <span className="text-primary font-bold">US</span></p>
       </div>
 
-      <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28 text-sm'>
-        <img className='w-full md:max-w-[360px]' src={assets.contact_image} alt="" />
+      {/* Content Section */}
+      <div
+        className="my-10 flex flex-col justify-center items-center md:flex-row gap-10 mb-28 text-sm max-w-6xl mx-auto px-6"
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: 'rotateY(10deg)',
+          transition: 'transform 0.5s ease',
+        }}
+      >
+        {/* Image */}
+        <img
+          className="w-full md:max-w-[400px] rounded-lg  hover:shadow-primary/50 transition-shadow duration-300 "
+          src={assets.contact_image}
+          alt="Contact Us"
+          style={{
+            transform: 'translateZ(20px)',
+            transition: 'transform 0.5s ease',
+          }}
+        />
 
-        <div className='flex flex-col justify-center items-start gap-6'>
-          <p className='font-semibold text-lg text-gray-600'>Our OFFICE</p>
-          <p className='text-gray-500'>EIB <br /> EIB campus Banglore</p>
-          <p className='text-gray-500'>Tel: (415) 555 0132 <br /> Email: ansumdwivedi8@gmail.com</p>
-          <p className='font-semibold text-lg text-gray-600'>Careers at PRESCRIPTO</p>
-          <p className='text-gray-500'>Learn more about our teams and job openings.</p>
+        {/* Contact Details */}
+        <div
+          className="flex flex-col justify-center items-start gap-6 bg-white p-8 rounded-lg  hover:shadow-sm transition-shadow duration-900"
+          style={{
+            transform: 'translateZ(30px)',
+            transition: 'transform 0.5s ease',
+          }}
+        >
+          <p className="font-semibold text-xl text-gray-700">Our Office</p>
+          <p className="text-gray-600">
+            EIB <br /> EIB Campus, Bangalore
+          </p>
+          <p className="text-gray-600">
+            Tel: 8052078680 <br /> Email: ansumdwivedi8@gmail.com
+          </p>
+          <p className="font-semibold text-xl text-gray-700">Careers at DocAppointment</p>
+          <p className="text-gray-600">
+            Learn more about our teams and job openings.
+          </p>
 
-          <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
+          {/* Explore Jobs Button */}
+          <button
+            className="border border-primary px-8 py-3 text-sm font-medium text-primary hover:bg-primary hover:text-white transition-all duration-500 rounded-lg"
+            style={{
+              transform: 'translateZ(10px)',
+              transition: 'transform 0.5s ease',
+            }}
+          >
+            Explore Jobs
+          </button>
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

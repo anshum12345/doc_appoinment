@@ -1,46 +1,59 @@
-import React from 'react'
-import { assets } from '../assets/assets'
+import React from 'react';
+import { assets } from '../assets/assets';
 
 const About = () => {
   return (
-    <div>
-      <div className='text-center text-2xl pt-10 text-gray-500'>
-        <p>ABOUT <span className='text-gray-700 font-medium'>US</span></p>
+    <div className="flex flex-col items-center ">
+      {/* ---------- Title Section ---------- */}
+      <div className="text-center text-4xl pt-10 text-gray-600 font-bold mb-12">
+        <p>ABOUT <span className="text-primary font-bold">US</span></p>
       </div>
 
-      <div className='my-10 flex flex-col md:flex-row gap-12'>
-        <img className='w-full md:max-w-[360px]' src={assets.about_image} alt="" />
+      {/* ---------- Content Section ---------- */}
+      <div className="my-10 flex flex-col md:flex-row gap-12 max-w-6xl px-6">
+        <img
+          className="w-full md:max-w-[400px] rounded-lg hover:shadow-lg transition-shadow duration-300"
+          src={assets.about_image}
+          alt="About Us"
+        />
 
-        <div className='flex flex-col justify-center gap-6 md:w-2/4 text-sm text-gray-600'>
-          <p>Welcome to Prescripto, your trusted partner in managing your healthcare needs conveniently and efficiently. At Prescripto, we understand the challenges individuals face when it comes to scheduling doctor appointments and managing their health records.</p>
-          <p>Prescripto is committed to excellence in healthcare technology. We continuously strive to enhance our platform, integrating the latest advancements to improve user experience and deliver superior service. Whether you're booking your first appointment or managing ongoing care, Prescripto is here to support you every step of the way.</p>
-          <b className='text-gray-800'>Our Vision</b>
-          <p>Our vision at Prescripto is to create a seamless healthcare experience for every user. We aim to bridge the gap between patients and healthcare providers, making it easier for you to access the care you need, when you need it.</p>
+        <div className="flex flex-col justify-center gap-6 md:w-2/4 text-lg text-gray-700 leading-relaxed">
+          <p>
+            Welcome to <b className="text-primary">DocAppointment</b>, your reliable partner in simplifying healthcare access and managing appointments with ease. We know how challenging it can be to find the right doctor and schedule an appointment that works for you, which is why we've built <b>DocAppointment</b> to address that need.
+          </p>
+          <p>
+            At <b className="text-primary">DocAppointment</b>, our goal is to make healthcare accessible and convenient for everyone. With just a few clicks, you can connect with top-rated doctors, book appointments, and manage your healthcare needs without the stress of long waits and complicated processes.
+          </p>
+          <b className="text-gray-800 text-xl">Our Vision</b>
+          <p>
+            Our vision is to bridge the gap between patients and healthcare providers by offering a user-friendly platform that makes booking appointments seamless and hassle-free. We aim to empower users by providing easy access to healthcare, anytime, anywhere.
+          </p>
         </div>
       </div>
 
-      <div className='text-xl my-4'>
-        <p>WHY <span className='text-gray-700 font-semibold'>CHOOSE US</span></p>
+      {/* ---------- Why Choose Us Section ---------- */}
+      <div className="text-4xl my-12 text-gray-600 font-bold">
+        <p>WHY <span className="text-primary font-bold">CHOOSE US</span></p>
       </div>
 
-      <div className='flex flex-col md:flex-row mb-20'>
-        <div className='border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer'>
-          <b>Efficiency:</b>
-          <p>Streamlined appointment scheduling that fits into your busy lifestyle.</p>
+      <div className="flex flex-col md:flex-row gap-8 max-w-6xl px-6 mb-20">
+        <div className="border border-gray-200 rounded-lg px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-lg hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer shadow-lg hover:shadow-primary/50">
+          <b className="text-xl">Efficiency:</b>
+          <p>Experience fast and hassle-free appointment booking that fits into your busy schedule.</p>
         </div>
 
-        <div className='border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer'>
-          <b>Convenience:</b>
-          <p>Access to a network of trusted healthcare professionals in your area.</p>
+        <div className="border border-gray-200 rounded-lg px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-lg hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer shadow-lg hover:shadow-primary/50">
+          <b className="text-xl">Convenience:</b>
+          <p>Connect with a wide network of trusted doctors and healthcare providers, all available at your fingertips.</p>
         </div>
 
-        <div className='border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer'>
-          <b>Personalization:</b>
-          <p>Tailored recommendations and reminders to help you stay on top of your health.</p>
+        <div className="border border-gray-200 rounded-lg px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-lg hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer shadow-lg hover:shadow-primary/20">
+          <b className="text-xl">Personalization:</b>
+          <p>Get personalized recommendations and reminders for your health checkups, appointments, and follow-ups.</p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
