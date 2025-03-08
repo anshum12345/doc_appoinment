@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-  const currencySymbol = "₹";
+  const currencySymbol = "$";
   const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000"; // Fallback URL
   const [doctors, setDoctors] = useState([]);
   const [token, setToken] = useState(localStorage.getItem("token") || null);

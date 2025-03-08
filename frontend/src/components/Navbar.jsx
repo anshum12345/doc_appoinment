@@ -26,32 +26,24 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <ul className="hidden md:flex items-center gap-8 font-medium">
         <NavLink to="/" className="hover:text-primary transition-colors duration-300">
-          <li className="py-1 relative">
-            HOME
-            <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden nav-link-underline" />
-          </li>
+          <li className="py-1 relative">HOME</li>
         </NavLink>
 
         <NavLink to="/doctors" className="hover:text-primary transition-colors duration-300">
-          <li className="py-1 relative">
-            ALL DOCTORS
-            <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden nav-link-underline" />
-          </li>
+          <li className="py-1 relative">ALL DOCTORS</li>
         </NavLink>
 
         <NavLink to="/about" className="hover:text-primary transition-colors duration-300">
-          <li className="py-1 relative">
-            ABOUT
-            <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden nav-link-underline" />
-          </li>
+          <li className="py-1 relative">ABOUT</li>
         </NavLink>
 
         <NavLink to="/contact" className="hover:text-primary transition-colors duration-300">
-          <li className="py-1 relative">
-            CONTACT
-            <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden nav-link-underline" />
-          </li>
+          <li className="py-1 relative">CONTACT</li>
         </NavLink>
+        
+   
+      
+     
       </ul>
 
       {/* User Actions */}
@@ -76,6 +68,10 @@ const Navbar = () => {
                 >
                   My Appointments
                 </p>
+
+         
+
+           
                 <p
                   onClick={logout}
                   className="hover:text-primary cursor-pointer transition-colors duration-300"
@@ -147,6 +143,15 @@ const Navbar = () => {
             className="w-full text-center py-3 hover:bg-gray-100 rounded-lg transition-colors duration-300"
           >
             CONTACT
+          </NavLink>
+
+          {/* Donate Blood Link in Mobile Menu */}
+          <NavLink
+            onClick={() => setShowMenu(false)}
+            to="/donate-blood"
+            className="w-full text-center py-3 hover:bg-red-100 text-red-600 font-semibold rounded-lg transition-colors duration-300"
+          >
+            DONATE BLOOD
           </NavLink>
         </ul>
       </div>

@@ -36,11 +36,16 @@ const Footer = () => {
 
         {/* ---------- Right Section ---------- */}
         <div>
-          <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
-          <ul className='flex flex-col gap-2 text-gray-600'>
-            <li>8052078680</li>
-            <li>anshumdwivedi8@gmail.com</li>
-          </ul>
+        <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
+<ul className='flex flex-col gap-2 text-gray-600'>
+  <li>8052078680</li>
+  <li>
+    <a href='mailto:anshumdwivedi8@gmail.com' className='text-blue-600 hover:underline'>
+      anshumdwivedi8@gmail.com
+    </a>
+  </li>
+</ul>
+
         </div>
 
       </div>
