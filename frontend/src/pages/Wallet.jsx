@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { FaCoins, FaHistory, FaCreditCard, FaGift, FaArrowUp, FaArrowDown, FaPlus } from 'react-icons/fa';
+import { FaCoins, FaHistory, FaCreditCard, FaGift, FaArrowUp, FaArrowDown, FaPlus, FaTint, FaUser } from 'react-icons/fa';
 
 const Wallet = () => {
   const { backendUrl, token, user } = useContext(AppContext);
